@@ -101,6 +101,8 @@
     <!-- Add new posts by copying the block above and editing the content -->
   </main>
 
+
+
   <footer>
     © <span id="year"></span> My Blog · Built with HTML & GitHub Pages
   </footer>
@@ -109,5 +111,15 @@
     // Auto-update year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => document.getElementById(id).innerHTML = data);
+    }
+
+    loadComponent("header", "components/header.html");
+  </script>
+
 </body>
 </html>
